@@ -1,26 +1,27 @@
-# MainExpressServer
+# Main Express Server
 ## Home
-Chiama 3 #get, con una `head( n )` su:
-- ultime partite giocate $\rightarrow$ competition > partita selezionata
-- clubs che hanno giocato recentemente $\rightarrow$ club selezionato
-- giocatori apparsi recentemente ordinati per `market_value` $\rightarrow$ player selezionato
+Calls 3 #get of an `head( N )` of:
+- last games $\rightarrow$ competition > selected game
+- clubs that have played recently $\rightarrow$ selected club
+- players appeared recently sorted by `market_value` $\rightarrow$ selected player
 ## Competitions
-Chiama 3 #get :
-1. **National**: le values della colonna `country_name` in `competitions`
-2. **International**: le immagini corrispondenti alle values della colonna `competition_id` in `competitions` che hanno `local_competition_code == NA`
-3. **England**: le immagini corrispondenti alle values della colonna `competition_id` in `competitions` che hanno `local_competition_code == GB1`
-> [!danger]- Icone per competitions
-> Bisogna caricare una immagine piccola per ogni `competition_id`.
+Calls 3 #get :
+1. **National**: the values of column `country_name` in `competitions` dataset
+2. **International**: the images matching values from `competition_id` column in `competitions` dataset which has `local_competition_code == NA`
+3. **England**: the images matching values from `competition_id` column in `competitions` dataset which has `local_competition_code == GB1`
+> [!danger]-  Competitions Icons
+> We must upload one small img for each `competition_id`'s value.
 ### National
-Quando si seleziona una card, fa una #get di tutte le competition con `country_name == <nazione>` e ne mette il `<competition_name>` nella testa delle "accordion menu".
-Quando si apre una accordion_`<competition_name>`, si deve eseguire una seconda #get su `games` aventi `competition_id` appartenente alla `<competition_name>` selezionata
+Clicking on a card, calls a #get of all competition with `country_name == <NATION>` and insert their `<competition_name>` in the heads of each "accordion menu".
+Opening an accordion_`<competition_name>`, it must call a further #get on `games` having `competition_id` belong to the selected `<competition_name>`
 ### International
-Alla selezione fa una #get di $N$ `games` della `competition_id` corrispondente.
-Premendo un bottone **`more results`** (o scorrendo la pagina #opzionale) dovrà eseguire una ulteriore #get (oppure una #post che indica l'ultima partita ottenuta) per I seguenti $N$ `games` 
+On selection, calls a #get of $N$ `games` in corresponding `competition_id`.
+`OnClick()` of a "**`more results`** button" (or scrolling the page #opzional) it will call a further #get (or #post which communicates last game read received by the site) to obtain $N$ more `games` 
 ### England
-Alla selezione fa una #get di $N$ `games` con `competition_id` appartenente a "England".
-Premendo un bottone **`more results`** (o scorrendo la pagina #opzionale) dovrà eseguire una ulteriore #get (oppure una #post che indica l'ultima partita ottenuta) per I seguenti $N$ `games` 
+On selection, calls a #get of $N$ `games` with `competition_id` belonging "England".
+`OnClick()` of a "**`more results`** button" (or scrolling the page #opzional) it will call a further #get (or #post which communicates last game read received by the site) to obtain $N$ more `games` 
 ## Clubs
+
 
 ## Players
 
