@@ -11,8 +11,10 @@
 
 ---
 # /clubs
-- `clubs/get_Anamed_clubs` $\rightarrow$ It gets `club_id` and `club_name` of **every** tuple of *clubs*, where `club_name` starts with `'A'`
-
+- clubs/get_countries $\rightarrow$ It gets from **Express** all the `country_name` tuples and `local_competition_code` associated, *(to show the accordions sorted by nation)*
+- `clubs/query_clubs` $\rightarrow$ This route requires a $@RequestParam$ with a string in one of the following formats:
+	- a `<LETTER>` to query all the clubs with name starting with `LETTER` from the **JPA** server
+	- a `<LOCAL_COMPETITION_CODE>` to query all the clubs with column `local_competition_code==<LOCAL_COMPETITION_CODE>` from the **JPA** server
 
 ---
 # /players
