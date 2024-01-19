@@ -23,7 +23,8 @@ On selection, calls a #get of $N$ `games` in corresponding `competition_id`.
 On selection, calls a #get of $N$ `games` with `competition_id` belonging "England".
 `OnClick()` of a "**`more results`** button" (or scrolling the page #opzional) it will call a further #get (or #post which communicates last game read received by the site) to obtain $N$ more `games` 
 ## Clubs
-Shows all clubs in collapsed "accordion menu". 
+This page is meant to show all clubs in "accordion menu". 
+All accordions start collapsed.
 The criteria to group them will be set by "pills buttons" which should be:
 - by Nation
 - by Name
@@ -51,6 +52,28 @@ Expanding an accordion menu, will be performed an other #get to obtain N players
 Further info about valuation criteria
 
 ## Single pages
+This page is meant to show the data of a single entity *(game, competition, player, club)*.
+1. First of all, a route like `"/clubs/single_page"` *(names have to be defined yet)* is called with an **argument** of what it has to show. 
+2. After that, the route will loads a *"struct"* in the `routes/index.js` with the data queried.
+3. Finally, the first route will redirect to the **HTML** page (probably a #get), where the page will show the data.
+
+$\bf{Example:}$
+The route could have this structure:
+``` js
+try {  
+	const Promise1 = load_data1()  
+    const Promise2 = load_data2() 
+	const Promise3 = load_data3()  
+	Promise.all([Promise1, Promise2,  Promise3])  
+	    .then(r => {  
+				// to show the html page 
+		        res.status(200).redirect('/single_page') 
+	    })  
+} catch (err) {  
+	res.status(500).send('error' + err)  
+}
+ ```
+*(Hoping for the best)*
 ### Player
 ### Club
 
