@@ -18,19 +18,11 @@
 
 ---
 # /players
-- `players/query_players` $\rightarrow$ This route requires a $@RequestParam$ that is a **dict** in the form of two strings, the first indicates one of the following fields:
-	- a field `<NATION>` to sort players by the `country` ***(`of_birth` or `of_citizenship`)***  attribute
-	- a field `<LAST_NAME>` to sort players by their `last_name`
-	- a field `<PLAYER_NAME>` to sort players by their `player_name`
-	-  a field `<CLUB>` to sort players by their `current_club_id`.
-
-> While the second one is the value to use as a **filter**. We could have:
->-  a `<LETTER>` to query all the players with **name** or the **last_name** starting with `LETTER` from the **JPA** server
-> -  a `<STRING>` to query **only** the matching values of the `field`. This input is triggered by the **search bar**!
-> An **example** of $@RequestParam$:  `{'field': 'nation', 'value': 'italy'}`
-
- - `players/query_playes_valutations` $\rightarrow$ This #get will need a parameter `<VALUATION>` to sort players by the **last** **player valuation** **date** *(We could eventually add the possibility to sort them by decreasing value)*.
- This route requires to query to the **second Express server**, as we are querying the player_valuation table.
+- `players/query_player_by_name` $\rightarrow$ This #get requires a $@RequestParam$ of type **string** *(with `length > 1`)*. The tuples will be returned and ordered by `last_name`. We want to get these values: `player_id`, `last_name`, `player_name` and `image_url`.
+- `players/query_players_by_nation` $\rightarrow$ This route requires a $@RequestParam$ of type **string**. The tuples will be returned and ordered by `country_of_citizenship`. We want to get these values: `player_id`, `last_name`, `player_name`, `country_of_citizenship`, `image_url`.
+-  `players/query_player_by_club` $\rightarrow$ This #get requires a $@RequestParam$ of type **long int**. The tuples will be returned and ordered by `current_club_id`. 
+- `players/query_players_by_club/query_name` $\rightarrow$ This #get requires a $@RequestParam$ of type **dict**. The format of the dict accepted will be `{club: '<long_int_value>', 'name': '<string>'}`.
+ - `players/query_playes_valutations` $\rightarrow$ This #get will need a requires a $@RequestParam$ of type **date**, to sort players by the **last player valuation date** *(We could eventually add the possibility to sort them by decreasing value)*.
 
 ---
 # /single_page
