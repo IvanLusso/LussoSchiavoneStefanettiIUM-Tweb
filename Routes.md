@@ -11,10 +11,10 @@
 
 ---
 # /clubs
-- clubs/get_countries $\rightarrow$ It gets from **Express** all the `country_name` tuples and `local_competition_code` associated, *(to show the accordions sorted by nation)*
-- `clubs/query_clubs` $\rightarrow$ This route requires a $@RequestParam$ with a string in one of the following formats:
-	- a `<LETTER>` to query all the clubs with name starting with `LETTER` from the **JPA** server
-	- a `<LOCAL_COMPETITION_CODE>` to query all the clubs with column `local_competition_code==<LOCAL_COMPETITION_CODE>` from the **JPA** server
+- `clubs/get_countries` $\rightarrow$ It gets from **Express** all the `country_name` tuples and `local_competition_code` associated, *(to show the accordions sorted by nation)*
+- `clubs/query_clubs_by_nation` $\rightarrow$ This route requires a $@RequestParam$ of **string** type, to query the tuples that match the `<LOCAL_COMPETITION_CODE>` argument.
+- `clubs/query_clubs_by_name` $\rightarrow$ This route requires a $@RequestParam$ of **string** type to query the tuples that match the `club_name` given
+- `clubs/get_club_by_id` $\rightarrow$ This #get requires a $@RequestParam$ of **int** type *(the club_id associated to the button of the club tuple)* and it redirects the user to the ***single_page***, where the club info will been shown
 
 ---
 # /players
