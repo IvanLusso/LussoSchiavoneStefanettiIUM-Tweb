@@ -1,21 +1,21 @@
 # /home
 - [ ] `home/get_last_games` - #JPA $\rightarrow$ This #get will retrieve the last 20/25 games. For this, we can set a **query string** to order the tuples by their `game_date`
-	per farlo:
-	informazioni da ottenere: `game_date`, `competition_id`, 2 `club_name`, 2 `own_goal`, `club_img`.
+	> HYD:
+	> info to gain: `game_date`, `competition_id`, 2 `club_name`, 2 `own_goal`, `club_img`.
 
-- [ ] `home/get_clubs_news`
-- [ ] `home/get_players_news`
+- [ ] `home/get_recent_clubs_news`
+- [ ] `home/get_trend_players`
 ---
 # /competitions
 - [ ] `competitions/get_competitions` - #EXPRESS $\rightarrow$ It gets all the data we want to show the different subsets of *competitions*: `competition_id`, `country_name` and `competition_name` are **required**
-- [ ] `competions/get_national_images` - #EXPRESS $\rightarrow$ It is **ONE** `get` (or `post`) which gets the images of:
+- [ ] `competitions/get_national_images` - #EXPRESS $\rightarrow$ It is **ONE** `get` (or `post`) which gets the images of:
 	- national flags 
 	- competitions to show (International and English ones)
+- [ ] `competitions/get_countries` - #EXPRESS $\rightarrow$ It gets all the `country_name` tuples and `local_competition_code` associated, *(to show the accordions sorted by nation)*
+- [ ] `competitions/query_clubs_by_nation` - #JPA $\rightarrow$ This route requires a $@RequestParam$ of **string** type, to query the tuples that match the `<LOCAL_COMPETITION_CODE>` argument.
 
 ---
 # /clubs
-- [ ] `clubs/get_countries` - #EXPRESS $\rightarrow$ It gets all the `country_name` tuples and `local_competition_code` associated, *(to show the accordions sorted by nation)*
-- [ ] `clubs/query_clubs_by_nation` - #JPA $\rightarrow$ This route requires a $@RequestParam$ of **string** type, to query the tuples that match the `<LOCAL_COMPETITION_CODE>` argument.
 - [ ] `clubs/query_clubs_by_name` - #JPA  $\rightarrow$ This route requires a $@RequestParam$ of **string** type to query the tuples that match the `club_name` given
 - [ ] `clubs/get_club_by_id` - #JPA $\rightarrow$ This #get requires a $@RequestParam$ of **int** type *(the `club_id` associated to the button of the club tuple)* and it redirects the user to the ***single_page***, where the club info will been shown
 
