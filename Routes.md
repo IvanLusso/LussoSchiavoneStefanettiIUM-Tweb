@@ -9,7 +9,7 @@
 ---
 # /home
 - [ ] `home/get_last_games` - #JPA $\rightarrow$ This #get will retrieve the last 20/25 games. For this, we can set a **query string** to order the tuples by their `game_date`
-	> HYD: info to gain: `game_date`, `competition_id`, 2 `club_name`, 2 `own_goal`, `club_img`.
+	> **HYD**: info to gain: `game_date`, `competition_id`, 2 `club_name`, 2 `own_goal`, `club_img`.
 
 - [ ] `home/get_recent_clubs_news`
 - [ ] `home/get_trend_players`
@@ -21,7 +21,7 @@
 ---
 # /competitions
 - [ ] `competitions/get_competitions` - #EXPRESS $\rightarrow$ It gets all the data we want to show the different subsets of *competitions*: `competition_id`, `domestic_league_code` are **required** ( #LOADING_PAGE_ROUTE)
-- [ ] `competitions/get_national_flags` - #EXPRESS $\rightarrow$ It is **ONE** `get` (or `post`) which gets country images and names from the custom model on Mongo: `flag_url`, `country_name` and `domestic_league_code` ( #LOADING_PAGE_ROUTE)
+- [ ] `general/get_national_flags` - #EXPRESS $\rightarrow$ It is a #get which retrieves **country images** and **names** from the custom model on Mongo: `flag_url`, `country_name` and `domestic_league_code` ( #LOADING_PAGE_ROUTE, #GENERAL_ROUTE )
 - [ ] `competitions/get_national_competition` - #EXPRESS $\rightarrow$ It is a #get which requires a `domestic_league_code` as a *@RequestParam* and retrieves **all the competitions** with that value
 - [ ] `competitions/get_games_of_league` - #JPA $\rightarrow$ This route has to retrieve **names** and **ids** of the local competitions. For this reason, it will ask for the `competition_name` and  the `competition_id` with the `domestic_league_code` matching to the one passed as argument  
 - [ ] `general/get_game_by_id` - #JPA $\rightarrow$ ( #GENERAL_ROUTE)
@@ -32,8 +32,10 @@
 
 ---
 # /clubs
-- [ ] `competitions/query_clubs_by_nation` - #JPA $\rightarrow$ This route requires a *@RequestParam* of **string** type, to query the tuples that match the `<LOCAL_COMPETITION_CODE>` argument.
-- [ ] `clubs/query_clubs_by_name` - #JPA  $\rightarrow$ This route requires a *@RequestParam* of **string** type to query the tuples that match the `club_name` given
+- [ ] `general/get_national_flags` - #EXPRESS $\rightarrow$ It is a #get which retrieves **country images** and **names** from the custom model on Mongo: `flag_url`, `country_name` and `domestic_league_code` ( #LOADING_PAGE_ROUTE, #GENERAL_ROUTE )
+- [ ] `clubs/get_clubs_by_nation` - #JPA $\rightarrow$ This route requires a **string** type as *@RequestParam* and retrieves the tuples that match the `<LOCAL_COMPETITION_CODE>` argument.
+> **HYD**: info to gain are: `club_id`, `club_name` 
+- [ ] `clubs/query_clubs_by_name` - #JPA  $\rightarrow$ This route requires a **string** type as *@RequestParam*, to query the tuples that match the `club_name` given
 - [ ] `clubs/get_club_by_id` - #JPA $\rightarrow$ ( #GENERAL_ROUTE)
 
 ---
