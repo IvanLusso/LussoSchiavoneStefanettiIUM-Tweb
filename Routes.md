@@ -7,15 +7,14 @@
 - [ ] `home/get_trend_players`
 ---
 # /competitions
-- [ ] `competitions/get_competitions` - #EXPRESS $\rightarrow$ It gets all the data we want to show the different subsets of *competitions*: `competition_id`, `country_name` and `competition_name` are **required**
-- [ ] `competitions/get_national_images` - #EXPRESS $\rightarrow$ It is **ONE** `get` (or `post`) which gets the images of:
-	- national flags 
-	- competitions to show (International and English ones)
-- [ ] `competitions/get_countries` - #EXPRESS $\rightarrow$ It gets all the `country_name` tuples and `local_competition_code` associated, *(to show the accordions sorted by nation)*
-- [ ] `competitions/query_clubs_by_nation` - #JPA $\rightarrow$ This route requires a $@RequestParam$ of **string** type, to query the tuples that match the `<LOCAL_COMPETITION_CODE>` argument.
+- [ ] `competitions/get_competitions` - #EXPRESS $\rightarrow$ It gets all the data we want to show the different subsets of *competitions*: `competition_id`, `domestic_league_code` are **required**
+- [ ] `competitions/get_national_flags` - #EXPRESS $\rightarrow$ It is **ONE** `get` (or `post`) which gets `flag_url`, `country_name` and `domestic_league_code`
+- [ ] `competitions/get_national_competition` - #EXPRESS $\rightarrow$ It is a #get which requires a `domestic_league_code` as a $@RequestParam$ and retrieves **all the competitions** with that value on the `domestic_league_code` column
+- [ ] `competitions/get_games_of_league` - #JPA $\rightarrow$ **WIP**
 
 ---
 # /clubs
+- [ ] `competitions/query_clubs_by_nation` - #JPA $\rightarrow$ This route requires a $@RequestParam$ of **string** type, to query the tuples that match the `<LOCAL_COMPETITION_CODE>` argument.
 - [ ] `clubs/query_clubs_by_name` - #JPA  $\rightarrow$ This route requires a $@RequestParam$ of **string** type to query the tuples that match the `club_name` given
 - [ ] `clubs/get_club_by_id` - #JPA $\rightarrow$ This #get requires a $@RequestParam$ of **int** type *(the `club_id` associated to the button of the club tuple)* and it redirects the user to the ***single_page***, where the club info will been shown
 
