@@ -52,14 +52,24 @@
 
 ---
 # /players
-- [ ] `players/query_players_by_nation` - #JPA $\rightarrow$ This route requires a **string** type as *@RequestParam*. The tuples will be returned and ordered by `country_of_citizenship`.
-> **HYD**: **@Response**: `player_id`, `last_name`, `player_name`, `country_of_citizenship`, `image_url`
-- [ ] `players/query_players_by_club/query_name` - #JPA $\rightarrow$ This #get requires a *@RequestParam* of type **DICT**. The format of the dict accepted will be `{club: '<long_int_value>', 'name': '<string>'}`
- - [ ] `players/query_players_valuations` - #EXPRESS $\rightarrow$ This #get will need a requires a *@RequestParam* of **date** type, to sort players by the **last player valuation date** *(We could eventually add the possibility to sort them by decreasing value)*
- - [ ] `players/get_player_by_id` - #JPA $\rightarrow$ This #get will redirect the user to the ***single_page***, loading info about the given `player_id`
+- [ ] `players/get_date_weeks` - #EXPRESS $\rightarrow$ This #get will retrieve the `date_week` values from the ***player_valuations table*** to display them as **accordions titles** ( #LOADING_PAGE_ROUTE)
+- [ ] `players/get_players_by_nation` - #JPA $\rightarrow$ This route requires a **string** type as *@RequestParam*. The tuples will be returned and ordered by `country_of_citizenship`.
+> **HYD**: 
+> - **@Params**: `country_of_citizenship`
+ > - **@Response**: `player_id`, `last_name`, `player_name`, `image_url`
+- [ ] `players/get_players_by_valuation` - #EXPRESS $\rightarrow$ This #get retrieves all values of **player_valutation**, to sort the player list. 
+> **HYD**: 
+> - **@Response**: player_id, date, player_valuation
+- [ ] `players/get_player_names` - #JPA $\rightarrow$ WIP ... 
+> **HYD**:
+> - **@Params**: A **LIST** of `player_id`
+> - @Response: A LIST of tuples: (`player_id`, `player_name`)
+- [ ] `players/get_player_by_id` - #JPA $\rightarrow$ ( #GENERAL_ROUTE)
 #### Search Bar:
 - [ ] `players/query_players_by_name` - #JPA $\rightarrow$ This #get requires a *@RequestParam* of **string** type *(with `length > 1`)*. The tuples will be returned and ordered by `last_name`. 
-> **HYD**: **@Response**: `player_id`, `last_name`, `player_name` and `image_url`
+> **HYD**:
+> - **@Param**: a string to compare with `player_name` 
+> - **@Response**: `player_id`, `last_name`, `player_name` and `image_url`
 
 ---
 # /single_page
