@@ -25,14 +25,14 @@
 - [ ] `competitions/get_national_competition` - #EXPRESS $\rightarrow$ It is a #get which requires a `domestic_league_code` as a *@RequestParam* and retrieves **all the competitions** with that value
 > **HYD**:
 > - **@Param**: `domestic_league_code`: 
-> 	> - can be `NULL` to retrieve ***International*** ( #LOADING_PAGE_ROUTE)
-> 	> - can be `GB1` to retrieve ***England*** ( #LOADING_PAGE_ROUTE)
+> 	 - can be `NULL` to retrieve ***International*** ( #LOADING_PAGE_ROUTE)
+> 	 - can be `GB1` to retrieve ***England*** ( #LOADING_PAGE_ROUTE)
 >  -  info to gain are: `competition_id`, `competition_name`. Also the `image` if **@Param** is `NULL`
 - [ ] `?/get_games_of_league` - #JPA $\rightarrow$ This route has to retrieve **names** and **ids** of the given domestic competitions. 
 > **HYD**: 
 > - **@Param**: `domestic_league_code`
 > - **@Response**:   `game_id`, `game_date`, 2 `club_name`, 2 `own_goal`
-- [ ] `games/get_game_by_id` - #JPA $\rightarrow$ ( #GENERAL_ROUTE)
+- [x] `games/get_game_by_id` - #JPA $\rightarrow$ ( #GENERAL_ROUTE)
 - [ ] `competitions/get_competition_by_id` - #EXPRESS $\rightarrow$ This is a #get to retrieve the competition by the **id** *(string)* passed as *@RequestParam* ( #GENERAL_ROUTE)
 #### Search bars:
 - [ ] `games/query_games_by_name` - #JPA $\rightarrow$ It gets **1** **string** name as argument to search and display all the games in which a club with matching name has played *(we will show games grouped by league accordions)*  ( #GENERAL_ROUTE)
@@ -48,12 +48,12 @@
 > HYD: 
 > - **@Param**: `club_name`
 > - **@Response**: `club_id`, `club_name`, `local_competition_code`
-- [ ] `genera/get_club_by_id` - #JPA $\rightarrow$ ( #GENERAL_ROUTE)
+- [ ] `clubs/get_club_by_id` - #JPA $\rightarrow$ ( #GENERAL_ROUTE)
 
 ---
 # /players
 - [ ] `players/get_date_weeks` - #EXPRESS $\rightarrow$ This #get will retrieve the `date_week` values from the ***player_valuations table*** to display them as **accordions titles** ( #LOADING_PAGE_ROUTE)
-- [ ] `players/get_players_by_nation` - #JPA $\rightarrow$ This route requires a **string** type as *@RequestParam*. The tuples will be returned and ordered by `country_of_citizenship`.
+- [x] `players/get_players_by_nation` - #JPA $\rightarrow$ This route requires a **string** type as *@RequestParam*. The tuples will be returned and ordered by `country_of_citizenship`.
 > **HYD**: 
 > - **@Params**: `country_of_citizenship`
  > - **@Response**: `player_id`, `last_name`, `player_name`, `image_url`
@@ -64,7 +64,7 @@
 > **HYD**:
 > - **@Params**: A **LIST** of `player_id`
 > - @Response: A LIST of tuples: (`player_id`, `player_name`)
-- [ ] `players/get_player_by_id` - #JPA $\rightarrow$ ( #GENERAL_ROUTE)
+- [x] `players/get_player_by_id` - #JPA $\rightarrow$ ( #GENERAL_ROUTE)
 #### Search Bar:
 - [ ] `players/query_players_by_name` - #JPA $\rightarrow$ This #get requires a *@RequestParam* of **string** type *(with `length > 1`)*. The tuples will be returned and ordered by `last_name`. 
 > **HYD**:
