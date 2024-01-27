@@ -11,8 +11,14 @@
 - [ ] `home/get_last_games` - #JPA $\rightarrow$ This #get will retrieve the last 20/25 games. For this, we can set a **query string** to order the tuples by their `game_date`.
 	> **HYD**: **@Response**: `game_date`, `competition_id`, 2 `club_name`, 2 `own_goal`, `club_img`
 
-- [ ] `home/get_recent_clubs_news`
-- [ ] `home/get_trend_players`
+- [ ] `home/get_recent_clubs_news` - #JPA $\rightarrow$ It is a #get to retrieve last clubs in base of last `game_date`.
+> **HYD**:
+> - **@Param**: `None`
+> - **@Response**: `club_id`, `club_name` *(And `club_img` which does not exist for us)*
+- [ ] `home/get_trend_players` - #JPA & #EXPRESS  $\rightarrow$ It could be one of this 3:
+	- Top $N$ players by last appearances and their goals number (filter by last $N$ games)
+	- Last $N$ player **valuations** ordered by **top value**
+	- $WIP$
 #### Clickable Routes:
 - [ ] `games/get_game_by_id` - #JPA $\rightarrow$ This is a #get to retrieve the game by the **id** *(int)* passed as *@RequestParam* ( #GENERAL_ROUTE)
 - [ ] `clubs/get_club_by_id` - #JPA  $\rightarrow$ This is a #get to retrieve the club by the **id** *(int)* passed as *@RequestParam* ( #GENERAL_ROUTE)
