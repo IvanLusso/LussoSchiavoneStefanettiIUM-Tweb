@@ -8,10 +8,10 @@
 
 ---
 # /home
-- [ ] `home/get_last_games` - #JPA $\rightarrow$ This #get will retrieve the last 20/25 games. For this, we can set a **query string** to order the tuples by their `game_date`.
+- [x] `games/get_last_games` - #JPA $\rightarrow$ This #get will retrieve the last 15/20 games. For this, we can set a **query string** to order the tuples by their `game_date`.
 	> **HYD**: **@Response**: `game_date`, `competition_id`, 2 `club_name`, 2 `own_goal`, `club_img`
 
-- [ ] `home/get_recent_clubs_news` - #JPA $\rightarrow$ It is a #get to retrieve last clubs in base of last `game_date`.
+- [x] `clubs/get_recent_clubs_news` - #JPA $\rightarrow$ It is a #get to retrieve last clubs in base of last `game_date`.
 > **HYD**:
 > - **@Param**: `None`
 > - **@Response**: `club_id`, `club_name` *(And `club_img` which does not exist for us)*
@@ -34,9 +34,9 @@
 > 	 - can be `NULL` to retrieve ***International*** ( #LOADING_PAGE_ROUTE)
 > 	 - can be `GB1` to retrieve ***England*** ( #LOADING_PAGE_ROUTE)
 >  -  info to gain are: `competition_id`, `competition_name`. Also the `image` if **@Param** is `NULL`
-- [ ] `?/get_games_of_league` - #JPA $\rightarrow$ This route has to retrieve **names** and **ids** of the given domestic competitions. 
+- [ ] `?/get_games_of_league` - #JPA $\rightarrow$ This route has to retrieve **names** and **ids** of the given domestic competitions. *(when an accordion is clicked)*
 > **HYD**: 
-> - **@Param**: `domestic_league_code`
+> - **@Param**: `competition_id`
 > - **@Response**:   `game_id`, `game_date`, 2 `club_name`, 2 `own_goal`
 - [x] `games/get_game_by_id` - #JPA $\rightarrow$ ( #GENERAL_ROUTE)
 - [ ] `competitions/get_competition_by_id` - #EXPRESS $\rightarrow$ This is a #get to retrieve the competition by the **id** *(string)* passed as *@RequestParam* ( #GENERAL_ROUTE)
