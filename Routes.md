@@ -15,6 +15,7 @@
 > **HYD**:
 > - **@Param**: `None`
 > - **@Response**: `club_id`, `club_name` *(And `club_img` which does not exist for us)*
+
 - [ ] `players/get_trend_players` - #JPA & #EXPRESS  $\rightarrow$ It could be one of this 3:
 	- Last (in ***date***) $N$ player **valuations** ordered by **top value**
 	- [ ] `player_valuations/get_last_players_by_valuations` - #EXPRESS $\rightarrow$ made as:
@@ -32,16 +33,19 @@
 # /competitions
 - [x] `flags/get_all` - #EXPRESS $\rightarrow$ It is a #get which retrieves all dataset from the custom model on Mongo: 
 > **HYD**: **@Response**: `flag_url`, `country_name` and `domestic_league_code` ( #LOADING_PAGE_ROUTE, #GENERAL_ROUTE )
+
 - [ ] `competitions/get_national_competition` - #EXPRESS $\rightarrow$ It is a #get which requires a `domestic_league_code` as a *@RequestParam* and retrieves **all the competitions** with that value. *(Also used in Competition/National accordions menu)*
 > **HYD**:
 > - **@Param**: `domestic_league_code`: 
 > 	 - can be `NULL` to retrieve ***International*** ( #LOADING_PAGE_ROUTE)
 > 	 - can be `GB1` to retrieve ***England*** ( #LOADING_PAGE_ROUTE)
 >  -  **@Response**: info to gain are: `competition_id`, `competition_name` and `image_url`
+
 - [x] `games/get_games_of_league` - #JPA $\rightarrow$ This route has to retrieve **names** and **ids** of the given domestic competitions. *(when an accordion is clicked)*
 > **HYD**: 
 > - **@Param**: `competition_id`
 > - **@Response**:   `game_id`, `game_date`, 2 `club_name`, 2 `own_goal`
+
 - [x] `games/get_game_by_id` - #JPA $\rightarrow$ ( #GENERAL_ROUTE)
 - [x] `competitions/get_competition_by_id` - #EXPRESS $\rightarrow$ This is a #get to retrieve the competition by the **id** *(string)* passed as *@RequestParam* ( #GENERAL_ROUTE)
 #### Search bars:
@@ -52,6 +56,7 @@
 > **HYD**:
 >  - **@Response**: `game_id`, `game_date`, `competition_id`, 2 `club_name`, 2 `own_goals` 
 >  $\textcolor{red}{We\ are\ missing\ DTO}$
+
 - [ ] `games/query_games_by_date` - #JPA $\rightarrow$ It gets a **date** *(or a **string** with a date in it)* as parameter and it returns a list of games (could be empty, so make sure to check it as an `Optional<>`) ( #GENERAL_ROUTE)
 > **HYD**:
 >  - **@Response**: `game_id`, `game_date`, `competition_id`, 2 `club_name`, 2 `own_goals` 
@@ -62,11 +67,13 @@
 - [ ] `clubs/clubs_by_nation` - #JPA $\rightarrow$ This route requires a **string** type as *@RequestParam* and retrieves the tuples that match the `<LOCAL_COMPETITION_CODE>` argument.
 > **HYD**: **@Response**: `club_id`, `club_name` 
 > $\textcolor{red}{We\ are\ missing\ DTO}$
+
 - [ ] `clubs/clubs_by_string` - #JPA  $\rightarrow$ This route requires a **string** type as *@RequestParam*, to query the tuples that match the `club_name` given
 > **HYD**: 
 > - **@Param**: `club_name`
 > - **@Response**: A **LIST** of `club_id`, `club_name`, `local_competition_code`
 > $\textcolor{red}{We\ are\ missing\ DTO}$
+
 - [x] `clubs/get_club_by_id` - #JPA $\rightarrow$ ( #GENERAL_ROUTE)
 
 ---
@@ -93,10 +100,15 @@
 > **HYD**:
 > - **@Param**: `club_id` and `season` 
 > - **@Response**: `game_id`, `game_date`, `competition_id`, 2 `club_name`, 2 `own_goals` 
+
 - [ ] `clubs/get_club_competitions` - #JPA and #EXPRESS $\rightarrow$ It gets `club_id` as input and joins with **club_games** to find the `game_ids`. Therefore, it retrieves `competition_id` and `season` from **games**.
 > **HYD**:
 > - **@Param**: `club_id`
+> - process: 
+> 	1. JPA receive the `club_id` and return a LIST of `competition_id`
+> 	2. EXPRESS receive a LIST of `competition_id` and return a list of tuple with `competition_id`, `competition_name` and `competition_img_url`
 > - **@Response**: A **LIST** of `competition_id`, `competition_name` and `competition_img_url`
+
 - [x] `players/query_player_names_by_ids` - #JPA $\rightarrow$ (Used in **singlePage/game** to see players name in different contexts). As follow:
 > **HYD**:
 > - **@Params**: A **LIST** of `player_id`
