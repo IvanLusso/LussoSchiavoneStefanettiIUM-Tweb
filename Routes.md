@@ -30,7 +30,7 @@
 
 ---
 # /competitions
-- [x] `flags/get_all` - #EXPRESS $\rightarrow$ It is a #get which retrieves **country images** and **names** from the custom model on Mongo: 
+- [x] `flags/get_all` - #EXPRESS $\rightarrow$ It is a #get which retrieves all dataset from the custom model on Mongo: 
 > **HYD**: **@Response**: `flag_url`, `country_name` and `domestic_league_code` ( #LOADING_PAGE_ROUTE, #GENERAL_ROUTE )
 - [ ] `competitions/get_national_competition` - #EXPRESS $\rightarrow$ It is a #get which requires a `domestic_league_code` as a *@RequestParam* and retrieves **all the competitions** with that value. *(Also used in Competition/National accordions menu)*
 > **HYD**:
@@ -59,7 +59,7 @@
 
 ---
 # /clubs
-- [ ] `flags/get_nations` - #EXPRESS $\rightarrow$ ( #LOADING_PAGE_ROUTE, #GENERAL_ROUTE)
+- [x] `flags/get_all` - #EXPRESS $\rightarrow$ ( #LOADING_PAGE_ROUTE, #GENERAL_ROUTE)
 - [ ] `clubs/clubs_by_nation` - #JPA $\rightarrow$ This route requires a **string** type as *@RequestParam* and retrieves the tuples that match the `<LOCAL_COMPETITION_CODE>` argument.
 > **HYD**: **@Response**: `club_id`, `club_name` 
 > $\textcolor{red}{We\ are\ missing\ DTO}$
