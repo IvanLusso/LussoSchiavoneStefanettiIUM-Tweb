@@ -34,12 +34,13 @@
 - [x] `flags/get_all` - #EXPRESS $\rightarrow$ It is a #get which retrieves all dataset from the custom model on Mongo: 
 > **HYD**: **@Response**: `flag_url`, `country_name` and `domestic_league_code` ( #LOADING_PAGE_ROUTE, #GENERAL_ROUTE )
 
-- [ ] `competitions/get_national_competition` - #EXPRESS $\rightarrow$ It is a #get which requires a `domestic_league_code` as a *@RequestParam* and retrieves **all the competitions** with that value. *(Also used in Competition/National accordions menu)*
+- [x] `competitions/get_national_competitions` - #EXPRESS $\rightarrow$ It is a #get which requires a `domestic_league_code` as a *@RequestParam* and retrieves **all the competitions** with that value. *(Also used in Competition/National accordions menu)*
 > **HYD**:
 > - **@Param**: `domestic_league_code`: 
 > 	 - can be `NULL` to retrieve ***International*** ( #LOADING_PAGE_ROUTE)
 > 	 - can be `GB1` to retrieve ***England*** ( #LOADING_PAGE_ROUTE)
 >  -  **@Response**: info to gain are: `competition_id`, `competition_name` and `image_url`
+>  $\textcolor{red}{image\ url\ is\ missing}$
 
 - [x] `games/get_games_of_league` - #JPA $\rightarrow$ This route has to retrieve **names** and **ids** of the given domestic competitions. *(when an accordion is clicked)*
 > **HYD**: 
