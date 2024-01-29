@@ -94,7 +94,7 @@
 > **HYD**:
 > - **@Param**: `club_id` and `season` 
 > - **@Response**: `game_id`, `game_date`, `competition_id`, 2 `club_name`, 2 `own_goals` 
-- [ ] clubs/get_club_competitions #JPA and #EXPRESS \rightarrow It gets `club_id` as input and joins with **club_games** to find the `game_ids`. Therefore, it retrieves `competition_id` and `season` from **games**.
+- [ ] `clubs/get_club_competitions` - #JPA and #EXPRESS $\rightarrow$ It gets `club_id` as input and joins with **club_games** to find the `game_ids`. Therefore, it retrieves `competition_id` and `season` from **games**.
 > **HYD**:
 > - **@Param**: `club_id`
 > - **@Response**: A **LIST** of `competition_id`, `competition_name` and `competition_img_url`
