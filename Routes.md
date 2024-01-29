@@ -11,11 +11,10 @@
 - [x] `games/get_last_games` - #JPA $\rightarrow$ This #get will retrieve the last 15/20 games. For this, we can set a **query string** to order the tuples by their `game_date`.
 	> **HYD**: **@Response**: `game_date`, `competition_id`, 2 `club_name`, 2 `own_goal`, `club_img`
 
-- [ ] `clubs/get_recent_clubs_news` - #JPA $\rightarrow$ It is a #get to retrieve last clubs in base of last `game_date`.
+- [x] `clubs/get_recent_clubs_news` - #JPA $\rightarrow$ It is a #get to retrieve last clubs in base of last `game_date`.
 > **HYD**:
 > - **@Param**: `None`
 > - **@Response**: `club_id`, `club_name` *(And `club_img` which does not exist for us)*
-> - $\textcolor{orange}{Made,\ but\ needs\ to\ be\ uploaded}$
 - [ ] `players/get_trend_players` - #JPA & #EXPRESS  $\rightarrow$ It could be one of this 3:
 	- Last (in ***date***) $N$ player **valuations** ordered by **top value**
 	- [ ] `player_valuations/get_last_players_by_valuations` - #EXPRESS $\rightarrow$ made as:
