@@ -45,10 +45,9 @@
 - [x] `games/get_game_by_id` - #JPA $\rightarrow$ ( #GENERAL_ROUTE)
 - [x] `competitions/get_competition_by_id` - #EXPRESS $\rightarrow$ This is a #get to retrieve the competition by the **id** *(string)* passed as *@RequestParam* ( #GENERAL_ROUTE)
 #### Search bars:
-- [ ] `games/query_games_by_name` - #JPA $\rightarrow$ It gets **1** **string** name as argument to search and display all the games in which a club with matching name has played *(we will show games grouped by league accordions)*  ( #GENERAL_ROUTE)
+- [x] `games/query_games_by_name` - #JPA $\rightarrow$ It gets **1** **string** name as argument to search and display all the games in which a club with matching name has played *(we will show games grouped by league accordions)*  ( #GENERAL_ROUTE)
 > **HYD**:
 >  - **@Response**: `game_id`, `game_date`, `competition_id`, 2 `club_name`, 2 `own_goals` 
->  $\textcolor{red}{We\ are\ missing\ DTO}$
 - [ ] `games/query_games_by_double_name` - #JPA $\rightarrow$ It gets **2** **string** names as argument to search and display all the games between these two clubs. *(we will show games grouped by league accordions)*  ( #GENERAL_ROUTE)
 > **HYD**:
 >  - **@Response**: `game_id`, `game_date`, `competition_id`, 2 `club_name`, 2 `own_goals` 
