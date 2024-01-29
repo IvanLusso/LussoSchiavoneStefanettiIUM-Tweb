@@ -15,7 +15,7 @@
 > **HYD**:
 > - **@Param**: `None`
 > - **@Response**: `club_id`, `club_name` *(And `club_img` which does not exist for us)*
-> - $\textcolor{red}{Made,\ but\ needs\ to\ be\ uploaded}$
+> - $\textcolor{orange}{Made,\ but\ needs\ to\ be\ uploaded}$
 - [ ] `players/get_trend_players` - #JPA & #EXPRESS  $\rightarrow$ It could be one of this 3:
 	- Last (in ***date***) $N$ player **valuations** ordered by **top value**
 	- [ ] `player_valuations/get_last_players_by_valuations` - #EXPRESS $\rightarrow$ made as:
@@ -33,18 +33,18 @@
 # /competitions
 - [x] `flags/get_all` - #EXPRESS $\rightarrow$ It is a #get which retrieves **country images** and **names** from the custom model on Mongo: 
 > **HYD**: **@Response**: `flag_url`, `country_name` and `domestic_league_code` ( #LOADING_PAGE_ROUTE, #GENERAL_ROUTE )
-- [ ] `competitions/get_national_competition` - #EXPRESS $\rightarrow$ It is a #get which requires a `domestic_league_code` as a *@RequestParam* and retrieves **all the competitions** with that value
+- [ ] `competitions/get_national_competition` - #EXPRESS $\rightarrow$ It is a #get which requires a `domestic_league_code` as a *@RequestParam* and retrieves **all the competitions** with that value. *(Also used in Competition/National accordions menu)*
 > **HYD**:
 > - **@Param**: `domestic_league_code`: 
 > 	 - can be `NULL` to retrieve ***International*** ( #LOADING_PAGE_ROUTE)
 > 	 - can be `GB1` to retrieve ***England*** ( #LOADING_PAGE_ROUTE)
->  -  info to gain are: `competition_id`, `competition_name`. Also the `image` if **@Param** is `NULL`
+>  -  **@Response**: info to gain are: `competition_id`, `competition_name` and `image_url`
 - [x] `games/get_games_of_league` - #JPA $\rightarrow$ This route has to retrieve **names** and **ids** of the given domestic competitions. *(when an accordion is clicked)*
 > **HYD**: 
 > - **@Param**: `competition_id`
 > - **@Response**:   `game_id`, `game_date`, 2 `club_name`, 2 `own_goal`
 - [x] `games/get_game_by_id` - #JPA $\rightarrow$ ( #GENERAL_ROUTE)
-- [x] `competitions/get_by_id` - #EXPRESS $\rightarrow$ This is a #get to retrieve the competition by the **id** *(string)* passed as *@RequestParam* ( #GENERAL_ROUTE)
+- [x] `competitions/get_competition_by_id` - #EXPRESS $\rightarrow$ This is a #get to retrieve the competition by the **id** *(string)* passed as *@RequestParam* ( #GENERAL_ROUTE)
 #### Search bars:
 - [ ] `games/query_games_by_name` - #JPA $\rightarrow$ It gets **1** **string** name as argument to search and display all the games in which a club with matching name has played *(we will show games grouped by league accordions)*  ( #GENERAL_ROUTE)
 > **HYD**:
