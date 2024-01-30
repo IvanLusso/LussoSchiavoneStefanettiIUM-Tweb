@@ -88,7 +88,7 @@
 ---
 # /single_page
 - [x] `clubs/get_club_by_id` - #JPA $\rightarrow$ ( #GENERAL_ROUTE )
-- [ ] `competitions/get_competitions_by_id` - #EXPRESS $\rightarrow$ ( #GENERAL_ROUTE )
+- [x] `competitions/get_competitions_by_id` - #EXPRESS $\rightarrow$ ( #GENERAL_ROUTE )
 - [x] `players/get_player_by_id` - #JPA  $\rightarrow$ ( #GENERAL_ROUTE )
 - [x] `games/get_game_by_id` - #JPA  $\rightarrow$ ( #GENERAL_ROUTE )
 - [ ] `games/get_games_by_competition_id` - #JPA $\rightarrow$ It gets games info in base of the argument passed, which has to be a `<COMPETITION_ID>`
@@ -104,9 +104,9 @@
 > **HYD**:
 > - **@Param**: `club_id`
 > - process: 
-> 	1. JPA receive the `club_id` and return a LIST of `competition_id`
-> 	2. EXPRESS receive a LIST of `competition_id` and return a list of tuple with `competition_id`, `competition_name` and `competition_img_url`
-> - **@Response**: A **LIST** of `competition_id`, `competition_name` and `competition_img_url`
+> 	1.  - [ ]  Name `club/get_club_competitions_id`. JPA receive the `club_id` and return a LIST of `competition_id`
+> 	2. - [ ] Name: `competitions/get_competitions_by_ids`. EXPRESS receive a LIST of `competition_id` and return a list of tuple with `competition_id`, `competition_name` and `img_url`
+> - **@Response**: A **LIST** of `competition_id`, `competition_name` and `img_url`
 
 - [x] `players/query_player_names_by_ids` - #JPA $\rightarrow$ (Used in **singlePage/game** to see players name in different contexts). As follow:
 > **HYD**:
