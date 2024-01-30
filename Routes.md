@@ -65,15 +65,13 @@
 ---
 # /clubs
 - [x] `flags/get_all` - #EXPRESS $\rightarrow$ ( #LOADING_PAGE_ROUTE, #GENERAL_ROUTE)
-- [ ] `clubs/clubs_by_nation` - #JPA $\rightarrow$ This route requires a **string** type as *@RequestParam* and retrieves the tuples that match the `<LOCAL_COMPETITION_CODE>` argument.
+- [x] `clubs/clubs_by_nation` - #JPA $\rightarrow$ This route requires a **string** type as *@RequestParam* and retrieves the tuples that match the `<LOCAL_COMPETITION_CODE>` argument.
 > **HYD**: **@Response**: `club_id`, `club_name` 
-> $\textcolor{red}{We\ are\ missing\ DTO}$
 
-- [ ] `clubs/clubs_by_string` - #JPA  $\rightarrow$ This route requires a **string** type as *@RequestParam*, to query the tuples that match the `club_name` given
+- [x] `clubs/clubs_by_string` - #JPA  $\rightarrow$ This route requires a **string** type as *@RequestParam*, to query the tuples that match the `club_name` given
 > **HYD**: 
 > - **@Param**: `club_name`
 > - **@Response**: A **LIST** of `club_id`, `club_name`, `local_competition_code`
-> $\textcolor{red}{We\ are\ missing\ DTO}$
 
 - [x] `clubs/get_club_by_id` - #JPA $\rightarrow$ ( #GENERAL_ROUTE)
 
