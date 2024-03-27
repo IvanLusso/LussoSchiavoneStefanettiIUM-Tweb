@@ -21,7 +21,7 @@
 	- [ ] `player_valuations/get_last_players_by_valuations` - #EXPRESS $\rightarrow$ made as:
 	> - **@Param**: `None`
 	> - **@Response**: A **LIST** with `player_id` and `player_valutation`
-	- [ ] `players/get_players_by_ids` - #JPA $\rightarrow$ #get or #post made as:
+	- [x] `players/get_players_by_ids` - #JPA $\rightarrow$ #get or #post made as:
 	  > - **@Param**: A **LIST** of `player_id`
 	  > -	**@Response**: A **LIST** of tuples with `player_name`, `player_id`, `image_url` 
 #### Clickable Routes:
@@ -79,11 +79,10 @@
 # /players
 - [x] `players/get_player_by_id` - #JPA $\rightarrow$ ( #GENERAL_ROUTE)
 #### Search Bar:
-- [ ] `players/get_players_by_name` - #JPA $\rightarrow$ This #get requires a *@RequestParam* of **string** type *(with `length > 1`)*. The tuples will be returned and ordered by `last_name`. 
+- [x] `players/get_players_by_name` - #JPA $\rightarrow$ This #get requires a *@RequestParam* of **string** type *(with `length > 1`)*. The tuples will be returned and ordered by `last_name`. 
 > **HYD**:
 > - **@Param**: a string to compare with `player_name` 
 > - **@Response**: A **LIST** of `player_id`, `player_name`, `image_url`
-> $\textcolor{red}{We\ are\ missing\ DTO}$
 
 ---
 # /single_page
@@ -91,7 +90,7 @@
 - [x] `competitions/get_competitions_by_id` - #EXPRESS $\rightarrow$ ( #GENERAL_ROUTE )
 - [x] `players/get_player_by_id` - #JPA  $\rightarrow$ ( #GENERAL_ROUTE )
 - [x] `games/get_game_by_id` - #JPA  $\rightarrow$ ( #GENERAL_ROUTE )
-- [ ] `games/get_games_by_competition_id` - #JPA $\rightarrow$ It gets games info in base of the argument passed, which has to be a `<COMPETITION_ID>`
+- [x] `games/get_games_by_competition_id` - #JPA $\rightarrow$ It gets games info in base of the argument passed, which has to be a `<COMPETITION_ID>`
 > **HYD**:
 > - **@Param**: `competition_id` and `season` 
 > - **@Response**: `game_id`, `game_date`, `competition_id`, 2 `club_name`, 2 `own_goals` 
