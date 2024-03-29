@@ -94,7 +94,7 @@
 > **HYD**:
 > - **@Param**: `competition_id` and `season` 
 > - **@Response**: `game_id`, `game_date`, `competition_id`, 2 `club_name`, 2 `own_goals` 
-- [ ] `games/get_games_by_club_id` - #JPA $\rightarrow$ It gets games info in base of the argument passed, which has to be a `<CLUB_ID>`
+- [x] `games/get_games_by_club_id` - #JPA $\rightarrow$ It gets games info in base of the argument passed, which has to be a `<CLUB_ID>`
 > **HYD**:
 > - **@Param**: `club_id` and `season` 
 > - **@Response**: `game_id`, `game_date`, `competition_id`, 2 `club_name`, 2 `own_goals` 
