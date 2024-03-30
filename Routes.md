@@ -103,7 +103,7 @@
 > **HYD**:
 > - **@Param**: `club_id`
 > - process: 
-> 	1.  - [ ]  Name `club/get_club_competitions_id`. #JPA receive the `club_id` and return a LIST of `competition_id`
+> 	1.  - [x]  Name `club/get_club_competitions_id`. #JPA receive the `club_id` and return a LIST of `competition_id`
 > 	2. - [x] Name: `competitions/get_competitions_by_ids`. #EXPRESS receive a LIST of `competition_id` and return a list of tuple with `competition_id`, `competition_name` and `img_url`
 > - **@Response**: A **LIST** of `competition_id`, `competition_name` and `img_url`
 
