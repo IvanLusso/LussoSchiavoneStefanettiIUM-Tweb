@@ -111,8 +111,3 @@
 > **HYD**:
 > - **@Params**: A **LIST** of `player_id`
 > - @Response: A **LIST** of tuples: (`player_id`, `player_name`)
-- [ ] `players/get_players_by_current_club_id` - #JPA $\rightarrow$ This route requires a **string** type as *@RequestParam*. The tuples will be returned and ordered by `country_of_citizenship`.
-> **HYD**: 
-> - **@Params**: `country_of_citizenship`
- > - **@Response**: `player_id`, `last_name`, `player_name`, `image_url`
- > $\textcolor{#0d0}{Modify\ previous}$  `get_players_by_nation`
