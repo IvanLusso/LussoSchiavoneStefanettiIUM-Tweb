@@ -16,9 +16,9 @@
 > - **@Param**: `None`
 > - **@Response**: `club_id`, `club_name` *(And `club_img` which does not exist for us)*
 
-- [ ] `players/get_trend_players` - #JPA & #EXPRESS  $\rightarrow$ It could be one of this 3:
+- [x] `players/get_trend_players` - #JPA & #EXPRESS  $\rightarrow$ It could be one of this 3:
 	- Last (in ***date***) $N$ player **valuations** ordered by **top value**
-	- [ ] `player_valuations/get_last_players_by_valuations` - #EXPRESS $\rightarrow$ made as:
+	- [x] `player_valuations/get_last_players_by_valuations` - #EXPRESS $\rightarrow$ made as:
 	> - **@Param**: `None`
 	> - **@Response**: A **LIST** with `player_id` and `player_valutation`
 	- [x] `players/get_players_by_ids` - #JPA $\rightarrow$ #get or #post made as:
