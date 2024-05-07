@@ -4,21 +4,25 @@ Still many things in **WIP**.
 ---
 ### 0b. Carousel
 - [x] still need to fix carousel translation throw X axis. (it works more or less, **but it is not accurate**)
-- [ ] adjust element to make them have, **almost in every case**, the same *aspect-ratio*.
+- [x] adjust element to make them have, **almost in every case**, the same *aspect-ratio*.
+- [ ] set the `href` of the elements
 
 ---
 ### 1. HomePage
 Still everything is "@todo" 
-- [ ] carousel `<iframe>` is required
+- [x] carousel `<iframe>` is required
 
 ---
 ### 2. Competitions
-- [ ] carousel `<iframe>` is required
+- [x] carousel `<iframe>` is required
+- [ ] div to display games about the competition clicked
 
 ---
 ### 3. Clubs
 - [x] **searchbar** adjustments
-- [ ] clubs **route** in MainExpressServer, forwarding the user to `"single_page/club/${id}"` 
+- [ ] generalize createAccordions()
+- [ ] clubs `href` in MainExpressServer, forwarding the user to `"single_page/club/${id}"` 
+- [ ] resolve the f. spinner loader
 
 ---
 ### 4. Players
