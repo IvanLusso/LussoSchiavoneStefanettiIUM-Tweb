@@ -22,5 +22,5 @@ Any style element not recognised by GitHub is a functionality added by the softw
 ### Documentation Index
 
 Before starting to code, we documented all the routes we had to build. This repository contains various documents, which have been updated to be useful. Here are the details:
-- [Pages Notes](<Pages notes>) - This section is where we tried to figure out how many routes we needed. You can find an initial map of our website here. Keep in mind that it may not be entirely accurate, but it helped us set up the following file.
-- [Routes](./Routes) - In this section, we set up all the routes we needed **before even starting** to write them down as code. While some of them are pretty straightforward, others have been much more tricky to figure out.
+- [Pages Notes](<Pages notes.md>) - This section is where we tried to figure out how many routes we needed. You can find an initial map of our website here. Keep in mind that it may not be entirely accurate, but it helped us set up the following file.
+- [Routes](./Routes.md) - In this section, we set up all the routes we needed **before even starting** to write them down as code. While some of them are pretty straightforward, others have been much more tricky to figure out.
