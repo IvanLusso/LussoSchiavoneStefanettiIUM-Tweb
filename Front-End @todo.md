@@ -34,6 +34,6 @@ Still all of its content is a **"@todo"**:
 - [ ] single_page/competition
 - [ ] single_page/club
 - [ ] single_page/game
-- [ ] single_page/player
+- [x] single_page/player
 
 
