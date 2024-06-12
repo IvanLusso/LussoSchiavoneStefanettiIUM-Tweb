@@ -1,39 +1,36 @@
-### 0a. Chat
-Still many things in **WIP**.
+### Completed Pages
+- [x] 1. Home
+- [ ] 2. Competitions
+- [x] 3. Clubs
+- [x] 4. Players
+- [x] 5.a single_page/club
+- [x] 5.b single_page/competition
+- [ ] 5.c single_page/game
+- [x] 5.d single_page/player
+- [ ] \*. chat (70%)
 
 ---
-### 0b. Carousel
-- [x] still need to fix carousel translation throw X axis. (it works more or less, **but it is not accurate**)
-- [x] adjust element to make them have, **almost in every case**, the same *aspect-ratio*.
-- [ ] set the `href` of the elements
-
----
-### 1. HomePage
-Still everything is "@todo" 
-- [x] carousel `<iframe>` is required
+### \*. Chat
+- [ ] **ADD**: mobile button 
+- [ ] **ADD**: mobile button 'click' functionality
 
 ---
 ### 2. Competitions
-- [x] carousel `<iframe>` is required
-- [ ] div to display games about the competition clicked
+- [ ] **MOVE**: search-bars on top of the page (forever showing)
+- [ ] **ADD**: functionality to the search-bars
+- [ ] **REMOVE**: *fifa* `id = KLUB` from the dataset
 
 ---
-### 3. Clubs
-- [x] **searchbar** adjustments
-- [ ] generalize createAccordions()
-- [ ] clubs `href` in MainExpressServer, forwarding the user to `"single_page/club/${id}"` 
-- [ ] resolve the f. spinner loader
+### 5.c SP/Game
+- [ ] **ADD**: starting_lineups
+- [ ] **ADD**: *players div* $\rightarrow$ we need a new route in both JPA and MAIN_EXPRESS servers
+- [ ] **ADD**: *game_events* **accordion**(s?) (already retrieved)
 
 ---
-### 4. Players
-- [x] the ***searchbar*** has to be shown below the **header**, when submit button is triggered
-- [x] the ***load more*** function has to be configured to make show players according to the actual number of the players retrieved. ***Half the number is not acceptable for that***.
----
-### 5. SinglePage
-Still all of its content is a **"@todo"**:
-- [ ] single_page/competition
-- [ ] single_page/club
-- [ ] single_page/game
-- [x] single_page/player
-
+### General  
+- [ ] **ADD**: javadoc comments
+- [ ] **FIX**: game list-item responsivity 
+- [ ] **FIX**: accordions getting disabled but not enabled back
+- [ ] **CHECK**: if navbar is working properly **in every page** 
+- [ ] **SEE**: if we can use slider.js for the responsive carousels
 
