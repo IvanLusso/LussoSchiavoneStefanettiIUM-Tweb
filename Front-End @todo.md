@@ -22,6 +22,7 @@
 
 ---
 ### 5.c SP/Game
+- [ ] **FIX**: competition link
 - [ ] **ADD**: starting_lineups
 - [ ] **ADD**: *players div* $\rightarrow$ we need a new route in both JPA and MAIN_EXPRESS servers
 - [ ] **ADD**: *game_events* **accordion**(s?) (already retrieved)
