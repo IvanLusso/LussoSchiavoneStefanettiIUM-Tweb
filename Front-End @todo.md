@@ -3,7 +3,7 @@
 - [ ] 2. Competitions
 - [x] 3. Clubs
 - [x] 4. Players
-- [x] 5.a single_page/club
+- [ ] 5.a single_page/club
 - [x] 5.b single_page/competition
 - [ ] 5.c single_page/game
 - [x] 5.d single_page/player
@@ -19,6 +19,10 @@
 - [ ] **MOVE**: search-bars on top of the page (forever showing)
 - [ ] **ADD**: functionality to the search-bars
 - [ ] **REMOVE**: *fifa* `id = KLUB` from the dataset
+
+---
+### 5.a SP/Club
+- [ ] **FIX**: *load_more* should **not exist** for "active players"
 
 ---
 ### 5.c SP/Game
