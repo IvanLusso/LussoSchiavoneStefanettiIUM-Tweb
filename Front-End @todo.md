@@ -3,7 +3,7 @@
 2. [ ] Competitions
 3. [x] Clubs
 4. [x] Players
-5. [ ] single_page/club
+5. [x] single_page/club
 6. [x] single_page/competition
 7. [ ] single_page/game
 8. [x] single_page/player
@@ -17,7 +17,7 @@
 
 ---
 ### 5. SP/Club
-- [ ] **FIX**: *load_more* should **not exist** for "active players"
+- [x] **FIX**: *load_more* should **not exist** for "active players"
 
 ---
 ### 7. SP/Game
