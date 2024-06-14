@@ -13,11 +13,12 @@
 ### 2. Competitions
 - [ ] **ADD**: functionality to the search-bars
 - [ ] **REMOVE**: *fifa* `id = KLUB` from the dataset
+- [ ] **ADD**: link to **every specific** national competition in competitions page
 
 ---
 ### 7. SP/Game
 - [x] **FIX**: competition links
-- [ ] **ADD**: starting_lineups
+- [ ] **ADD**: starting_lineups ${\textcolor: green}{FINAL!!!}$
 - [ ] **ADD**: *game_events* **accordion**(s?) (already retrieved)
 
 ---
@@ -28,5 +29,7 @@
 ### General  
 - [ ] **ADD**: javadoc comments
 - [ ] **FIX**: appearances list-item issues
+- [ ] **CHECK & FIX**: all the `catch()` cases 
 - [ ] **SEE**: if we can use slider.js for the responsive carousels
+- [ ] **CHANGE**: the px-5 in `px-2` (or `px-3`) + `px-sm-5`.
 
