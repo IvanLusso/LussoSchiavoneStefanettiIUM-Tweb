@@ -11,32 +11,22 @@
 
 ---
 ### 2. Competitions
-- [x] **MOVE**: search-bars on top of the page (forever showing)
 - [ ] **ADD**: functionality to the search-bars
 - [ ] **REMOVE**: *fifa* `id = KLUB` from the dataset
 
 ---
-### 5. SP/Club
-- [x] **FIX**: *load_more* should **not exist** for "active players"
-
----
 ### 7. SP/Game
-- [ ] **FIX**: competition links
+- [x] **FIX**: competition links
 - [ ] **ADD**: starting_lineups
-- [x] **ADD**: *players div* $\rightarrow$ we need a new route in both JPA and MAIN_EXPRESS servers
 - [ ] **ADD**: *game_events* **accordion**(s?) (already retrieved)
 
 ---
 ### 9. Chat
-- [x] **ADD**: mobile button 
 - [ ] **ADD**: mobile button 'click' functionality
 
 ---
 ### General  
 - [ ] **ADD**: javadoc comments
-- [x] **FIX**: game list-item responsivity 
 - [ ] **FIX**: appearances list-item issues
-- [x] **FIX**: accordions getting disabled but not enabled back
-- [x] **CHECK**: if navbar is working properly **in every page** 
 - [ ] **SEE**: if we can use slider.js for the responsive carousels
 
