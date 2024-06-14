@@ -18,7 +18,7 @@
 ---
 ### 7. SP/Game
 - [x] **FIX**: competition links
-- [ ] **ADD**: starting_lineups ${\textcolor: green}{FINAL!!!}$
+- [ ] **ADD**: starting_lineups ${\textcolor{#22ee33}{\ \ \ \ FINAL}}$
 - [ ] **ADD**: *game_events* **accordion**(s?) (already retrieved)
 
 ---
