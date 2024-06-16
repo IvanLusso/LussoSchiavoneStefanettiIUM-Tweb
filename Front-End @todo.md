@@ -13,7 +13,7 @@
 ### 2. Competitions
 - [ ] **ADD**: functionality to the search-bars
 - [ ] **REMOVE**: *fifa* `id = KLUB` from the dataset
-- [ ] **ADD**: link to **every specific** national competition in competitions page
+- [ ] **ADD**: link to **every specific** national competition in competitions page (*wrapper*)
 
 ---
 ### 7. SP/Game
