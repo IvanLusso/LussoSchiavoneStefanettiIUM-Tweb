@@ -7,13 +7,13 @@
 6. [x] single_page/competition
 7. [ ] single_page/game
 8. [x] single_page/player
-9. [ ] chat (85%)
+9. [ ] chat (95%)
 
 ---
 ### 2. Competitions
 - [ ] **ADD**: functionality to the search-bars
 - [x] **REMOVE**: *fifa* `id = KLUB` from the dataset
-- [ ] **ADD**: link to **every specific** national competition in competitions page (*wrapper*)
+- [x] **ADD**: link to **every specific** national competition in competitions page (*wrapper*)
 
 ---
 ### 7. SP/Game
@@ -24,7 +24,7 @@
 
 ---
 ### 9. Chat
-- [ ] **ADD**: mobile button 'click' functionality
+- [x] **ADD**: mobile button 'click' functionality
 
 ---
 ### General  
