@@ -7,7 +7,7 @@
 6. [x] single_page/competition
 7. [ ] single_page/game
 8. [x] single_page/player
-9. [ ] chat (95%)
+9. [x] chat
 
 ---
 ### 2. Competitions
@@ -18,10 +18,6 @@
 - [ ] **ADD**: starting_lineups ${\textcolor{#22ee33}{\ \ \ \ FINAL}}$
 - [ ] **ADD**: *game_events* **accordion**(s?) (already retrieved)
 - [ ] **CHANGE**: *players* **visualization**, grouping the players **by their club** (handling them like the divs of `info1` and `info2`)
-
----
-### 9. Chat
-- [x] **ADD**: mobile button 'click' functionality
 
 ---
 ### General  
