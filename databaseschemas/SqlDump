@@ -1,0 +1,322 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 15.6
+-- Dumped by pg_dump version 15.6
+
+-- Started on 2024-07-04 17:10:41 CEST
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- TOC entry 218 (class 1259 OID 34119)
+-- Name: club_games; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.club_games (
+    game_id bigint NOT NULL,
+    club_id bigint NOT NULL,
+    own_goal integer NOT NULL,
+    own_position integer NOT NULL,
+    own_manager_name character varying(60),
+    hosting boolean NOT NULL,
+    is_win boolean NOT NULL,
+    club_formation character varying(40),
+    id bigint NOT NULL
+);
+
+
+ALTER TABLE public.club_games OWNER TO postgres;
+
+--
+-- TOC entry 219 (class 1259 OID 34134)
+-- Name: club_games_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.club_games_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.club_games_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 4391 (class 0 OID 0)
+-- Dependencies: 219
+-- Name: club_games_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.club_games_id_seq OWNED BY public.club_games.id;
+
+
+--
+-- TOC entry 215 (class 1259 OID 34087)
+-- Name: clubs; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.clubs (
+    club_id bigint NOT NULL,
+    club_name character varying(60) NOT NULL,
+    squad_size integer NOT NULL,
+    average_age real,
+    foreigners_number integer NOT NULL,
+    foreigners_percentage real NOT NULL,
+    national_team_players integer NOT NULL,
+    stadium_name character varying(60) NOT NULL,
+    stadium_seats integer NOT NULL,
+    net_transfer_record bigint NOT NULL,
+    last_season integer NOT NULL,
+    local_competition_code character varying(32) NOT NULL
+);
+
+
+ALTER TABLE public.clubs OWNER TO postgres;
+
+--
+-- TOC entry 217 (class 1259 OID 34104)
+-- Name: game_events; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.game_events (
+    game_event_id character varying(40) NOT NULL,
+    minute integer NOT NULL,
+    event_type character varying(32) NOT NULL,
+    club_id bigint NOT NULL,
+    event_description character varying(150),
+    player_in_id bigint,
+    player_assist_id bigint,
+    game_id bigint NOT NULL,
+    player_id bigint NOT NULL
+);
+
+
+ALTER TABLE public.game_events OWNER TO postgres;
+
+--
+-- TOC entry 214 (class 1259 OID 34082)
+-- Name: games; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.games (
+    game_id bigint NOT NULL,
+    competition_id character varying(16) NOT NULL,
+    season integer NOT NULL,
+    round character varying(60) NOT NULL,
+    game_date timestamp(6) without time zone NOT NULL,
+    stadium character varying(60),
+    attendance integer,
+    referee character varying(60)
+);
+
+
+ALTER TABLE public.games OWNER TO postgres;
+
+--
+-- TOC entry 216 (class 1259 OID 34092)
+-- Name: players; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.players (
+    player_id bigint NOT NULL,
+    last_name character varying(60) NOT NULL,
+    player_name character varying(60) NOT NULL,
+    last_season integer NOT NULL,
+    current_club_id bigint NOT NULL,
+    country_of_birth character varying(40),
+    city_of_birth character varying(70),
+    country_of_citizenship character varying(40),
+    date_of_birth timestamp(6) without time zone,
+    foot character varying(5),
+    height_in_cm smallint,
+    sub_position character varying(32),
+    "position" character varying(32),
+    value_eur integer,
+    top_value_eur integer,
+    contract_expiration_date timestamp(6) without time zone,
+    agent_name character varying(60),
+    image_url character varying(150) NOT NULL
+);
+
+
+ALTER TABLE public.players OWNER TO postgres;
+
+--
+-- TOC entry 4222 (class 2604 OID 34135)
+-- Name: club_games id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.club_games ALTER COLUMN id SET DEFAULT nextval('public.club_games_id_seq'::regclass);
+
+
+--
+-- TOC entry 4384 (class 0 OID 34119)
+-- Dependencies: 218
+-- Data for Name: club_games; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.club_games (game_id, club_id, own_goal, own_position, own_manager_name, hosting, is_win, club_formation, id) FROM stdin;
+\.
+
+
+--
+-- TOC entry 4381 (class 0 OID 34087)
+-- Dependencies: 215
+-- Data for Name: clubs; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.clubs (club_id, club_name, squad_size, average_age, foreigners_number, foreigners_percentage, national_team_players, stadium_name, stadium_seats, net_transfer_record, last_season, local_competition_code) FROM stdin;
+\.
+
+
+--
+-- TOC entry 4383 (class 0 OID 34104)
+-- Dependencies: 217
+-- Data for Name: game_events; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.game_events (game_event_id, minute, event_type, club_id, event_description, player_in_id, player_assist_id, game_id, player_id) FROM stdin;
+\.
+
+
+--
+-- TOC entry 4380 (class 0 OID 34082)
+-- Dependencies: 214
+-- Data for Name: games; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.games (game_id, competition_id, season, round, game_date, stadium, attendance, referee) FROM stdin;
+\.
+
+
+--
+-- TOC entry 4382 (class 0 OID 34092)
+-- Dependencies: 216
+-- Data for Name: players; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.players (player_id, last_name, player_name, last_season, current_club_id, country_of_birth, city_of_birth, country_of_citizenship, date_of_birth, foot, height_in_cm, sub_position, "position", value_eur, top_value_eur, contract_expiration_date, agent_name, image_url) FROM stdin;
+\.
+
+
+--
+-- TOC entry 4392 (class 0 OID 0)
+-- Dependencies: 219
+-- Name: club_games_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.club_games_id_seq', 1, false);
+
+
+--
+-- TOC entry 4232 (class 2606 OID 34152)
+-- Name: club_games club_games_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.club_games
+    ADD CONSTRAINT club_games_pkey PRIMARY KEY (game_id, club_id);
+
+
+--
+-- TOC entry 4226 (class 2606 OID 34163)
+-- Name: clubs clubs_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.clubs
+    ADD CONSTRAINT clubs_pkey PRIMARY KEY (club_id);
+
+
+--
+-- TOC entry 4230 (class 2606 OID 34108)
+-- Name: game_events game_events_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.game_events
+    ADD CONSTRAINT game_events_pkey PRIMARY KEY (game_event_id);
+
+
+--
+-- TOC entry 4224 (class 2606 OID 34213)
+-- Name: games games_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.games
+    ADD CONSTRAINT games_pkey PRIMARY KEY (game_id);
+
+
+--
+-- TOC entry 4228 (class 2606 OID 34233)
+-- Name: players players_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.players
+    ADD CONSTRAINT players_pkey PRIMARY KEY (player_id);
+
+
+--
+-- TOC entry 4236 (class 2606 OID 34169)
+-- Name: club_games club_games_club_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.club_games
+    ADD CONSTRAINT club_games_club_id_fkey FOREIGN KEY (club_id) REFERENCES public.clubs(club_id);
+
+
+--
+-- TOC entry 4237 (class 2606 OID 34214)
+-- Name: club_games club_games_game_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.club_games
+    ADD CONSTRAINT club_games_game_id_fkey FOREIGN KEY (game_id) REFERENCES public.games(game_id);
+
+
+--
+-- TOC entry 4234 (class 2606 OID 34219)
+-- Name: game_events game_events_game_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.game_events
+    ADD CONSTRAINT game_events_game_id_fkey FOREIGN KEY (game_id) REFERENCES public.games(game_id);
+
+
+--
+-- TOC entry 4235 (class 2606 OID 34234)
+-- Name: game_events game_events_player_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.game_events
+    ADD CONSTRAINT game_events_player_id_fkey FOREIGN KEY (player_id) REFERENCES public.players(player_id);
+
+
+--
+-- TOC entry 4233 (class 2606 OID 34251)
+-- Name: players players_current_club_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.players
+    ADD CONSTRAINT players_current_club_id_fkey FOREIGN KEY (current_club_id) REFERENCES public.clubs(club_id);
+
+
+-- Completed on 2024-07-04 17:10:41 CEST
+
+--
+-- PostgreSQL database dump complete
+--
+
