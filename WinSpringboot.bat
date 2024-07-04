@@ -1,2 +1,2 @@
-cd ../JavaSpringBootServerTWeb23/ 
+cd ../solution/JavaSpringBootServerTWeb23/ 
 ./gradlew bootrun 

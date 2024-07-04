@@ -1,2 +1,2 @@
-cd ../MainExpressServer
+cd solution/MainExpressServer/
 node bin/www
