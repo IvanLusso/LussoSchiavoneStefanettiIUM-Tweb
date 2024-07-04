@@ -3,18 +3,30 @@
    
    > [!idea] Answer
 > ##### Servers Content Partitioning:
-> We used a **cleaned dataset** for the website project
-> We have divided data tables between MongoDB and PostgreSQL in base of 
+> Abbiamo deciso per questo progetto di **pulire i dati** prima di inserirli nei rispettivi database. 
+> Ciò è motivato dal fatto che ci ha reso più semplice, leggera e veloce la loro gestione. 
+> Il nostro progetto è **responsive**, pertanto prevede un'interfaccia che si adatta all'uso sia _desktop_ sia _mobile_. Tale implementazione ci ha richiesto di progettare una struttura degli elementi della pagina, tale da poter essere adattabile, ciò è stata una delle sfide iniziali più impegnative.
+> Tutto il progetto è distribuito su tre server: uno per gestire il client web, uno per gestire il database MongoDB e uno per gestire il database PostgreSQL.
+> 
+> 
+> ##### Chat and Socket
+> Abbiamo implementato la chat in due modi diversi per la parte desktop e per la parte mobile.
+> - Nella versione *desktop*, quando la chat non è visibile, il suo spazio è occupato da un `<div>` dedicato ad un'eventuale pubblicità. Quando la chat viene attivata ,la pubblicità viene sostituita dal  suo frame. Abbiamo fatto in modo tale che la sostituzione non crei vuoti all'interno della pagina, permettendo una navigazione fruibile.
+> - Nella versione *mobile* si fa invece uso di un `offcanvas` per accedere facilmente alla chat,  senza cambiare pagina.
+> 
+> ##### Carousel
+> blabla
+> 
+> ##### Images & Icons
+> bla
+> 
+> ##### User Flow
+> **Premessa**: il nostro gruppo non è esperto dell'argomento calcistico perciò ci siamo informati su quale fosse il modo più sensato per mostrare i dati, siamo arrivati alla conclusione che informazioni come le *partite* non hanno alcun significato se non sono inserite nel contesto di un *campionato*. Di conseguenza il flusso d'uso principale parte da un certo *campionato* di una certa stagione in cui si possono reperire le *partite* e i *club*, dalle *partite* si possono reperire i *giocatori*, le *squadre* e gli avvenimenti della partita, dai *club* si possono recuperare sia i *giocatori* attuali sia quelli passati, sono inoltre reperibili tutte le *partite* del *club*.
+> Il sito prevede una certa libertà d'uso, non vincolata allo user flow descritto.
+
 
 Innanzitutto abbiamo pulito i dati in maniera tale da popolare i database in maniera più efficiente e meglio organizzata secondo i nostri criteri.
 Quindi abbiamo deciso di mantenere il criterio della staticità / dinamicità dei dati per il loro inserimento in MongoDB piuttosto che in PostgreSQL. A ciò, abbiamo tuttavia applicato delle eccezioni che riguardano il basso grado di accoppiamento di determinate tabelle, quale ad esempio competitions.
-
-Abbiamo deciso per questo progetto di pulire i dati prima di inserirli nei rispettivi database. Ciò è motivato dal fatto che ci ha reso più semplice, leggera e veloce la loro gestione.
-Il nostro progetto è responsive, pertanto prevede un'interfaccia che si adatta all'uso sia desktop sia mobile. Tale implementazione ci ha richiesto di progettare una struttura degli elementi della pagina, tale da poter essere adattabile, ciò è stata una delle sfide iniziali più impegnative.
-
-
-
->
 
 ---
 
@@ -23,12 +35,24 @@ Il nostro progetto è responsive, pertanto prevede un'interfaccia che si adatta 
 
 > [!idea] Answer
 > 
+> ##### Chat & Socket
+> bla
+> 
+> ##### Carousel
+> bla
+> 
+> ##### Responsività
+> bla
+> 
+> ##### Inserimento dati JPA
+> blabla
 
 ---
 ## 3. Requirements: 
 > *How does this design comply with the requirements specified in the original assignment sheet? Are you meeting all requirements?*
 
 > [!idea] Answer
+> 
 
 
 ---
@@ -36,6 +60,8 @@ Il nostro progetto è responsive, pertanto prevede un'interfaccia che si adatta 
 > *Have you thought about exceptional situations that may limit your solution? Is your solution extensible? Can it be easily adapted for other requirements? Remember that no design is flawless and that is ok!*
 
 > [!idea] Answer
+> In generale per ogni single page si sarebbero potute mostrare più informazioni e più strutturate, ad esempio la single page dei club potevano essere organizzate per stagioni in cui si vedono le informazioni del periodo, oppure si potevano mostrare più informazioni come delle statistiche derivate dalle partite o i vari campionati vinti dalla squadra.
+> Per le pagine di ricerca si sarebbe potuto fare delle ricerche più avanzate.
 > 
 
 ---
@@ -59,7 +85,7 @@ Il nostro progetto è responsive, pertanto prevede un'interfaccia che si adatta 
 > Where a portion of code has been implemented by a single person *(e.g. chat system, custom carousels, JPA set up)*, communication and updates on the progress status among group members have never been lacking.
 
 ---
-## 7. Extra Information
+## 7. Extra Information TODO FINIRE
 > *(No marks – MANDATORY) – This section should include any extra details needed to run your code. If no extra configuration is needed, please explicitly say so in this section.*
 
 > [!idea] Answer
