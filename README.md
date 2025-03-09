@@ -3,7 +3,8 @@
 **Authors**: *Lusso, Schiavone, Stefanetti*
 
 
-This repository is designed to provide an **overview** of the entire project for the course *"IUM & T-Web"* (12 CFU).
+This repository is designed to provide an **overview** of the entire project for the course *"IUM & T-Web"* (12 CFU).<br>
+To see a **report** of the project, please see `report/report.pdf`.
 
 Here you will find the **links** to all the other project repositories. Furthermore, you can get the documentation from this repo.
 
